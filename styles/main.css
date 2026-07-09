@@ -1,0 +1,47 @@
+/* =========================================
+   WANDERLUST MAIN STYLESHEET
+   El orden es IMPORTANTE: Primero variables, luego base, luego componentes.
+   ========================================= */
+
+/* 1. Base */
+@import url('base/variables.css');
+@import url('base/reset.css');
+
+/* 2. Layout Global */
+
+/* 3. Componentes Reutilizables */
+@import url('components/cards.css');
+/* @import url('components/carrusel.css'); */
+@import url('components/forms.css');
+@import url('components/contact.css');
+@import url('components/reviews.css');
+@import url('components/breadcrumb.css');
+
+/* 4. Estilos Específicos por Página */
+@import url('pages/index.css');
+@import url('pages/destinations.css');
+@import url('pages/blog.css');
+@import url('pages/forum.css');
+@import url('pages/booking.css');
+@import url('pages/community.css');
+@import url('pages/gems.css');
+@import url('pages/auth.css');
+@import url('pages/register.css');
+@import url('pages/login.css');
+@import url('pages/profile.css');
+@import url('pages/trip-details.css');
+
+@import url('layout/header.css');
+@import url('layout/footer.css');
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   margin: 0;
+   padding: 0;
+   width: 100%;
+}

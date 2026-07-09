@@ -1,0 +1,91 @@
+/* Tips page specific (simple) */
+.tips-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  margin-top: 1rem;
+}
+
+.tip-card {
+  background: white;
+  border: 1px solid var(--color-gray-200);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.tip-title {
+  font-weight: 700;
+  color: var(--color-gray-900);
+  font-size: 1.05rem;
+}
+
+.tip-text {
+  margin-top: 0.5rem;
+  color: var(--color-gray-700);
+}
+
+/* Modal (simple, reutilizable similar al foro) */
+.modal-overlay {
+  display: none; /* lo mostrará JS con display:flex */
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 1200;
+  padding: 1rem;
+  /* No forzamos display aquí; JS lo hará a flex para animar correctamente */
+}
+
+.modal-overlay.modal-content-wrapper,
+.modal-overlay[style*="display: flex"] {
+  /* Si el overlay está en display:flex (set por JS), alineamos al centro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-overlay .modal-content {
+  background: #fff;
+  padding: 1.25rem;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 560px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  box-sizing: border-box;
+}
+
+.modal-form input[type="text"],
+.modal-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  margin-top: 6px;
+  margin-bottom: 10px;
+  border: 1px solid var(--color-gray-300);
+  border-radius: 6px;
+  font-family: inherit;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.btn-cancel {
+  background: #ccc;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-submit-post {
+  background: #27ae60;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- TRADUCCIÓN: Título y descripción de la página -->
+  <meta name="i18n-title" content="page_blog_detail_title">
+  <meta name="i18n-description" content="page_blog_detail_desc">
+
+  <title>Wanderlust Travels</title>
+  <link rel="icon" href="images/travel-svgrepo-com.svg" type="image/x-icon">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body id="page-blog-detail">
+
+  <!-- HEADER (Inyectado por jQuery) -->
+  <header></header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+
+    <!-- Breadcrumbs -->
+    <div id="breadcrumb-root"></div>
+
+    <!-- Article Content -->
+    <article class="blog-article-container">
+
+      <!-- Article Header -->
+      <div class="blog-header">
+        <!-- TRADUCCIÓN: Texto de carga inicial -->
+        <h1 id="blog-title" class="blog-title">Cargando artículo...</h1>
+
+        <div class="blog-meta">
+          <div class="author-avatar">
+            <!-- WAVE FIX: Icono decorativo oculto al lector de pantalla -->
+            <svg aria-hidden="true" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+            </svg>
+          </div>
+          <div class="author-info">
+            <!-- Los IDs se mantienen para que tu JS pueda inyectar los datos reales -->
+            <p id="blog-author" class="author-name">Autor</p>
+            <p id="blog-date" class="publish-date">Fecha</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Image -->
+      <div class="blog-hero-container">
+        <!-- WAVE FIX & TRADUCCIÓN: 
+             1. 'src' vacío está bien si JS lo llena luego.
+             2. 'data-i18n-alt' asegura que tenga texto alternativo accesible mientras carga.
+        -->
+        <img id="blog-hero-image" src="" data-i18n-alt="blog_hero_alt" alt="Imagen del artículo"
+          class="blog-hero-img hidden">
+      </div>
+
+      <!-- Article Body -->
+      <div id="blog-content" class="blog-body">
+        <p class="text-center" data-i18n="loading_content">Cargando contenido...</p>
+      </div>
+
+    </article>
+  </main>
+
+  <div class="contact-component"></div>
+
+  <!-- FOOTER (Inyectado por jQuery) -->
+  <footer></footer>
+
+  <!-- SCRIPTS -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script type="module" src="script/app.js"></script>
+</body>
+
+</html>

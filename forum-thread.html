@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hilo del Foro</title>
+  <link rel="icon" href="images/travel-svgrepo-com.svg" type="image/x-icon">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/pages/forum-thread.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+  <header></header>
+
+
+  <div class="breadcrumb-bar">
+    <div class="container breadcrumb-content">
+      <a href="community.html">Comunidad</a><span class="separator">&gt;</span><span class="current">Blog</span>
+    </div>
+  </div>
+
+
+
+  <main class="thread-layout">
+
+    <!-- ✅ Added id="thread-main-title" -->
+    <h1 id="thread-main-title" class="thread-title">Cargando título...</h1>
+
+    <!-- Messages Container -->
+    <div id="thread-messages" class="messages-container">
+      <!-- JS will inject messages here -->
+    </div>
+
+    <!-- Input Area (Fixed Bottom) -->
+    <div class="input-area">
+      <div class="input-wrapper">
+        <input type="text" id="msg-input" name="message" placeholder="Introduce aquí tu mensaje" aria-required="true"
+          autocomplete="off" aria-label="Escribe tu respuesta">
+
+        <div class="action-buttons">
+          <button type="button" class="btn-icon upload-btn" id="btn-attach" aria-label="Adjuntar archivo"
+            title="Adjuntar archivo">
+            <i class="fa-solid fa-arrow-up-from-bracket" aria-hidden="true"></i>
+          </button>
+          <!-- Botón cerrar hilo / volver: ejemplo con aria-label -->
+          <button type="button" class="btn-icon close-btn" id="btn-close-thread" aria-label="Cerrar hilo"
+            title="Cerrar hilo">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer></footer>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script type="module" src="script/app.js"></script>
+
+</body>
+
+</html>

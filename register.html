@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- TRADUCCIÓN: Título de la pestaña -->
+  <meta name="i18n-title" content="page_register_title">
+
+  <title>Registro al Club</title>
+  <link rel="icon" href="images/travel-svgrepo-com.svg" type="image/x-icon">
+  <link rel="stylesheet" href="styles/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <header></header>
+
+  <div class="main-container">
+
+    <h1 class="title" data-i18n="reg_h1">¡ Bienvenid@ al club !</h1>
+    <h2 class="subtitle" data-i18n="reg_h2">Queremos conocerte un poco mejor</h2>
+
+    <div class="form-card">
+      <form id="registerForm">
+
+        <div class="form-group">
+          <label for="nombre" data-i18n="reg_label_name">Nombre</label>
+          <input type="text" id="nombre" placeholder="Tu nombre" data-i18n-placeholder="ph_name" aria-label="Nombre"
+            data-i18n-aria="reg_label_name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="apellidos" data-i18n="reg_label_surname">Apellidos</label>
+          <input type="text" id="apellidos" placeholder="Tus apellidos" data-i18n-placeholder="ph_surname"
+            aria-label="Apellidos" data-i18n-aria="reg_label_surname" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email" data-i18n="reg_label_email">Correo Electrónico</label>
+          <input type="email" id="email" placeholder="tucorreo@gmail.com" data-i18n-placeholder="ph_email_example"
+            aria-label="Email" data-i18n-aria="reg_label_email" required>
+        </div>
+
+        <div class="form-row three-cols">
+          <div class="form-group">
+            <label for="pais" data-i18n="reg_label_country">País</label>
+            <div class="select-wrapper">
+              <select id="pais" aria-label="Seleccionar país" data-i18n-aria="reg_label_country">
+                <option value="España" data-i18n="opt_spain">España</option>
+                <option value="México" data-i18n="opt_mexico">México</option>
+                <option value="Colombia" data-i18n="opt_colombia">Colombia</option>
+                <option value="Otro" data-i18n="opt_other">Otro</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="instagram" data-i18n="reg_label_insta">Instagram</label>
+            <input type="text" id="instagram" placeholder="@tuusuario" data-i18n-placeholder="ph_insta"
+              aria-label="Instagram" data-i18n-aria="reg_label_insta">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label data-i18n="reg_label_photo">Foto de perfil</label>
+          <div class="photo-buttons">
+            <button type="button" class="btn-gallery" id="btnGallery" data-i18n="reg_btn_gallery">Galería</button>
+            <button type="button" class="btn-camera" id="btnCamera" data-i18n="reg_btn_camera">Tomar una foto</button>
+          </div>
+
+          <!-- Input oculto: necesita traducción en aria-label para lectores de pantalla -->
+          <input type="file" id="galleryInput" aria-label="Galería" data-i18n-aria="reg_btn_gallery" accept="image/*"
+            style="display: none;">
+
+          <!-- Preview: necesita traducción en alt -->
+          <img id="photoPreview" src="" alt="Vista previa" data-i18n-alt="reg_photo_alt"
+            style="display: none; width: 100px; height: 100px; object-fit: cover; margin-top: 10px; border-radius: 50%; border: 2px solid #ddd;">
+        </div>
+
+        <div class="form-group">
+          <label for="password" data-i18n="reg_label_pass">Contraseña</label>
+          <input type="password" id="password" placeholder="********" data-i18n-placeholder="ph_password"
+            aria-label="Contraseña" data-i18n-aria="reg_label_pass" required>
+        </div>
+
+        <div class="form-group">
+          <label for="re-password" data-i18n="reg_label_repass">Repite la contraseña</label>
+          <input type="password" id="re-password" placeholder="********" data-i18n-placeholder="ph_password"
+            aria-label="Repetir contraseña" data-i18n-aria="reg_label_repass" required>
+        </div>
+
+        <div class="checkbox-group">
+          <!-- Checkbox: aria-label para accesibilidad -->
+          <input type="checkbox" id="privacy" aria-label="Aceptar privacidad" data-i18n-aria="reg_aria_privacy"
+            required>
+          <!-- Label con HTML: usamos data-i18n-html -->
+          <label for="privacy" data-i18n-html="reg_privacy_html">
+            He leído y acepto la <a href="#">Política de Privacidad de Datos</a>
+          </label>
+        </div>
+
+        <button type="submit" class="btn-register" data-i18n="reg_btn_submit">Register</button>
+
+      </form>
+    </div>
+  </div>
+
+  <div class="contact-component"></div>
+
+  <footer></footer>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="module" src="script/app.js"></script>
+
+</body>
+
+</html>

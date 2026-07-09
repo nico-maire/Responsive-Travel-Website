@@ -1,0 +1,297 @@
+/* Reset & Basic Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- Progress Navigation --- */
+.progress-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 20px;
+    background: transparent;
+}
+
+.progress-step {
+    flex: 1;
+    text-align: left;
+    padding: 15px 0;
+    border-bottom: 4px solid #e0e0e0;
+    color: #666;
+    font-size: 14px;
+    font-weight: 500;
+    margin-right: 15px;
+    cursor: pointer;
+    transition: color 0.2s, border-bottom 0.2s;
+}
+
+.progress-step:hover {
+    color: #444;
+    border-bottom: 4px solid #ccc;
+}
+
+.progress-step:last-child {
+    margin-right: 0;
+}
+
+.progress-step.active {
+    border-bottom: 4px solid #222;
+    color: #222;
+    font-weight: bold;
+}
+
+/* --- Form Container --- */
+.form-container {
+    background-color: #fff;
+    width: 100%;
+    max-width: 900px;
+    padding: 40px;
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eee;
+    min-height: 600px;
+    text-align: left;
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: #222;
+}
+
+/* --- Input Utilities --- */
+.form-group {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.form-row {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.booking-form-card {
+    background-color: #fff;
+    width: 100%;
+    max-width: 900px;
+    padding: 40px;
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eee;
+    min-height: 600px;
+    text-align: left;
+    /* Ensures text inside is left-aligned */
+    margin: 0 auto;
+    /* Centers the card horizontally if needed */
+}
+
+.form-row label {
+    width: 200px;
+    min-width: 200px;
+    font-size: 14px;
+    color: #444;
+}
+
+.split-label-input {
+    justify-content: flex-start;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #444;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #555;
+    outline: none;
+    background: #fff;
+    transition: border 0.2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #aaa;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #ccc;
+}
+
+/* --- Checkbox Specific Styles (For Terms & Policy) --- */
+.checkbox-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    width: 100%;
+}
+
+.checkbox-row input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #333;
+    cursor: pointer;
+    margin: 0;
+}
+
+.checkbox-row label {
+    margin-bottom: 0;
+    cursor: pointer;
+    text-align: left;
+    width: auto;
+}
+
+.nested-checkbox {
+    margin-left: 200px;
+    margin-top: 10px;
+}
+
+/* --- Layout Helpers --- */
+.hidden {
+    display: none;
+}
+
+.step-content {
+    display: none;
+}
+
+.step-content.active {
+    display: block;
+}
+
+.mt-2 {
+    margin-top: 10px;
+}
+
+.mt-4 {
+    margin-top: 20px;
+}
+
+.mt-6 {
+    margin-top: 40px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.align-top {
+    align-items: flex-start;
+}
+
+.align-top label {
+    margin-top: 10px;
+}
+
+/* --- Address Grid (Step 2) --- */
+.address-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+/* --- Phone Group (Step 2) --- */
+.phone-group {
+    display: flex;
+    gap: 10px;
+}
+
+.phone-prefix {
+    width: 80px;
+}
+
+/* --- Step 3 Specifics --- */
+.card-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.card-icon {
+    position: absolute;
+    left: 10px;
+    display: flex;
+}
+
+.card-icon .circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    opacity: 0.8;
+}
+
+.card-icon .circle.red {
+    background-color: #eb001b;
+    margin-right: -12px;
+    z-index: 1;
+}
+
+.card-icon .circle.orange {
+    background-color: #f79e1b;
+    z-index: 2;
+}
+
+.card-input-wrapper input {
+    padding-left: 50px;
+}
+
+.grid-2-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* --- Buttons --- */
+.btn-primary {
+    background-color: #2b2b2b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 14px;
+    width: 100%;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #444;
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form-row label {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .nested-checkbox {
+        margin-left: 0;
+    }
+
+    .address-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}

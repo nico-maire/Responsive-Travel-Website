@@ -1,0 +1,82 @@
+/* Layout Wrapper */
+.cc-wrapper {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Typography */
+.cc-title {
+    font-size: 22px;
+    color: #1a1a1a;
+    margin: 0 0 5px 0;
+    font-weight: 700;
+}
+
+.cc-subtitle {
+    color: #000000;
+    font-size: 16px;
+    margin: 0 0 25px 0;
+}
+
+/* Form Structure */
+.cc-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cc-row {
+    display: flex;
+    gap: 10px;
+}
+
+/* Inputs */
+.cc-input,
+.cc-textarea {
+    padding: 10px 12px;
+    border: 1px solid #d1d1d1;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+    background-color: #fff;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+.cc-input:focus,
+.cc-textarea:focus {
+    border-color: #333;
+}
+
+.cc-input {
+    flex-grow: 1;
+}
+
+.cc-textarea {
+    resize: vertical;
+    min-height: 120px;
+    width: 100%;
+}
+
+/* Button */
+.cc-btn {
+    background-color: #1a1a1a;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-weight: 500;
+}
+
+.cc-btn:hover {
+    background-color: #000;
+}

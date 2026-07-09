@@ -1,0 +1,361 @@
+/* --- General Layout --- */
+body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #111;
+}
+
+/* --- Sub Header & Search --- */
+.sub-header {
+    background-color: #fff;
+    padding: 15px 40px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.breadcrumbs {
+    font-size: 14px;
+    color: #666;
+}
+
+.breadcrumbs .current {
+    font-weight: 600;
+    color: #333;
+}
+
+.search-bar {
+    position: relative;
+    width: 300px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px 40px 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.search-bar input:focus {
+    border-color: #333;
+}
+
+.search-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+}
+
+/* --- Forum List --- */
+.forum-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* --- Forum Card Styling --- */
+.forum-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+}
+
+.forum-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+    border-color: #ccc;
+}
+
+.forum-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    color: #222;
+}
+
+.forum-card p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.meta-info {
+    font-size: 12px;
+    color: #3b3b3b;
+    text-transform: uppercase;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-read-more {
+    display: inline-block;
+    margin-top: 20px;
+    max-width: 160px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-read-more:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+}
+
+
+
+
+/* --- Load More --- */
+.load-more-container {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.btn-load-more {
+    background: #222;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.btn-load-more:hover {
+    background: #444;
+}
+
+/* --- Contact Section --- */
+.contact-section {
+    background-color: #f1f1f1;
+    border-radius: 16px;
+    padding: 40px;
+    text-align: center;
+}
+
+.contact-section h3 {
+    margin-bottom: 5px;
+}
+
+.contact-form {
+    max-width: 500px;
+    margin: 20px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+}
+
+.input-group input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.btn-submit {
+    background: #000;
+    color: white;
+    border: none;
+    padding: 0 25px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Button Style */
+.btn-create-post {
+    background-color: #2c3e50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.btn-create-post:hover {
+    background-color: #34495e;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Content */
+.modal-content {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h3 {
+    margin-top: 0;
+}
+
+.modal-form input,
+.modal-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.modal-form textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.modal-actions {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.btn-cancel {
+    background: #ccc;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.btn-submit-post {
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sub-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+
+    .search-bar {
+        width: 100%;
+    }
+
+    .btn-read-more {
+        position: static;
+        margin-top: 15px;
+        width: 100%;
+    }
+}
+
+
+/* Forum search bar (placed above cards) */
+.forum-search-wrapper {
+    max-width: 900px;
+    margin: 18px auto;
+    padding: 0 20px;
+}
+
+.forum-search-bar {
+    position: relative;
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 999px;
+    padding: 6px 12px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(10, 10, 10, 0.04);
+}
+
+.forum-search-bar input {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 10px 36px 10px 12px;
+    font-size: 14px;
+    background: transparent;
+    color: #222;
+}
+
+.forum-search-bar .search-icon {
+    position: absolute;
+    right: 14px;
+    color: #888;
+    font-size: 14px;
+    pointer-events: none;
+}
+
+/* Responsive: ajustar márgenes en móvil */
+@media (max-width: 768px) {
+    .forum-search-wrapper {
+        margin: 12px 16px;
+    }
+
+    .forum-search-bar input {
+        font-size: 13px;
+        padding: 9px 36px 9px 12px;
+    }
+}

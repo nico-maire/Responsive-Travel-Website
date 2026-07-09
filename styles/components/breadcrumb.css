@@ -1,0 +1,67 @@
+/* =========================================
+   BREADCRUMB BAR
+   ========================================= */
+.breadcrumb-bar {
+    /* Layout: Standard block flow to sit under the sticky header */
+    display: block;
+    width: 100%;
+
+    /* Visuals */
+    background-color: #f9f9f9;
+    /* Slightly darker than header for contrast */
+    border-bottom: 1px solid #e5e5e5;
+
+    /* Spacing: Minimal padding as requested */
+    padding: 0.4rem 0;
+    margin-bottom: 2rem;
+
+    /* Stacking: Lower than header (1000) but above content */
+    position: relative;
+    z-index: 10;
+}
+
+/* =========================================
+   BREADCRUMB CONTENT (Centered)
+   ========================================= */
+.breadcrumb-content {
+    /* Flexbox is the best way to center content horizontally */
+    display: flex;
+    justify-content: center;
+    /* Centers items horizontally */
+    align-items: center;
+    /* Centers items vertically */
+
+    width: 100%;
+    max-width: 1280px;
+    /* Matches your header-container max-width */
+    margin: 0 auto;
+    /* Centers the container itself if screen is huge */
+
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* =========================================
+   LINKS & TEXT
+   ========================================= */
+.breadcrumb-content a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.breadcrumb-content a:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+.breadcrumb-content .separator {
+    margin: 0 0.5rem;
+    color: #999;
+    font-size: 0.8rem;
+}
+
+.breadcrumb-content .current {
+    color: #111;
+    font-weight: 600;
+}

@@ -1,0 +1,300 @@
+/* ========================================
+   ESTILOS GENERALES (Reset)
+   ======================================== */
+.footer-wrapper {
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    /* O tu fuente preferida */
+}
+
+.footer-container {
+    max-width: 100%;
+    margin: 0 auto;
+    display: grid;
+}
+
+/* Títulos y textos base */
+.f-item h3 {
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.f-item ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.f-item ul li {
+    font-size: 0.85rem;
+    margin-bottom: 0.2rem;
+    line-height: 1.4;
+    cursor: pointer;
+}
+
+/* ========================================
+   ESTILOS DE LOS ENLACES (Links)
+   ======================================== */
+
+/* Aplica a todos los links dentro de las listas del footer */
+.f-item ul li a {
+    color: #1a1a1a;
+    /* Negro suave (casi puro) */
+    text-decoration: none;
+    /* Quita el subrayado */
+    transition: color 0.2s ease;
+}
+
+/* IMPORTANTE: Evita que se pongan morados al visitarlos */
+.f-item ul li a:visited {
+    color: #1a1a1a;
+}
+
+/* Efecto al pasar el ratón (Hover) */
+.f-item ul li a:hover {
+    color: #000000;
+    /* Negro puro */
+    text-decoration: underline;
+    /* Subrayado solo al pasar el mouse */
+}
+
+/* ========================================
+   ESTILOS PARA LOS ICONOS DE REDES SOCIALES
+   ======================================== */
+.area-social a {
+    color: #1a1a1a;
+    /* Iconos en negro */
+    text-decoration: none;
+}
+
+.area-social a:visited {
+    color: #1a1a1a;
+}
+
+.area-social a:hover {
+    color: #000000;
+    transform: scale(1.1);
+    /* Pequeño efecto zoom */
+}
+
+/* ============================================================
+   DISEÑO MÓVIL / TABLET (< 1024px)
+   Aquí forzamos la estructura compleja horizontal
+   ============================================================ */
+@media (max-width: 1023px) {
+    .footer-wrapper {
+        background-color: #A0A0A0;
+        /* El gris oscuro de Figma */
+        padding: 1.5rem 1rem;
+        color: #222;
+    }
+
+    .footer-container {
+        /* 
+           CLAVE: En vez de 1 columna, definimos 4 columnas específicas:
+           1. Logo (fijo 120px)
+           2. Iconos (fijo estrecho 30px)
+           3. Destinos (flexible)
+           4. Comunidad (flexible)
+        */
+        grid-template-columns: 120px 30px 1fr 1fr;
+
+        /* Definimos dónde va cada cosa */
+        grid-template-areas:
+            "logo social dest comm"
+            /* Fila 1: Todo junto horizontal */
+            "asis asis   asis asis"
+            /* Fila 2: Asistencia ocupa todo el ancho */
+            "copy copy   copy copy";
+        /* Fila 3: Copyright ocupa todo el ancho */
+
+        column-gap: 10px;
+        /* Espacio pequeño entre elementos para que quepa en móvil */
+        row-gap: 20px;
+    }
+
+    /* 1. Logo */
+    .area-logo {
+        grid-area: logo;
+    }
+
+    .logo-box {
+        width: 100%;
+        height: 90px;
+        /* Altura de la caja gris */
+        background-color: #808080;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-style: italic;
+        font-size: 1.1rem;
+    }
+
+    /* 2. Redes Sociales (Verticales al lado del logo) */
+    .area-social {
+        grid-area: social;
+        display: flex;
+        flex-direction: column;
+        /* Vertical */
+        justify-content: space-between;
+        /* Distribuidos en la altura del logo */
+        align-items: center;
+        padding: 5px 0;
+    }
+
+    .area-social svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    /* 3. Textos (Destinos y Comunidad) */
+    .area-dest {
+        grid-area: dest;
+    }
+
+    .area-comm {
+        grid-area: comm;
+    }
+
+    /* Ajuste de fuente para móvil para que quepan las columnas */
+    .area-dest ul li,
+    .area-comm ul li {
+        font-size: 0.75rem;
+        /* Texto un poco más pequeño */
+        color: #333;
+    }
+
+    .area-dest h3,
+    .area-comm h3 {
+        font-size: 0.85rem;
+    }
+
+    /* 4. Asistencia (Horizontal abajo) */
+    .area-asis {
+        grid-area: asis;
+        margin-top: 0.5rem;
+    }
+
+    .area-asis h3 {
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+        /* Título Asistencia un poco más grande */
+    }
+
+    .area-asis .asis-list {
+        display: flex;
+        flex-wrap: wrap;
+        /* Permite saltar de línea si no caben */
+        gap: 15px 20px;
+        /* Espacio horizontal y vertical entre links */
+    }
+
+    .area-asis li {
+        font-size: 0.9rem;
+        color: #333;
+    }
+
+    /* 5. Copyright */
+    .area-copy {
+        grid-area: copy;
+        text-align: right;
+        font-size: 0.7rem;
+        color: white;
+        font-style: italic;
+        margin-top: 10px;
+    }
+}
+
+/* ============================================================
+   DISEÑO DESKTOP (> 1024px)
+   Diseño limpio de 4 columnas (Fondo claro)
+   ============================================================ */
+@media (min-width: 1024px) {
+    .footer-wrapper {
+        background-color: #E5E5E5;
+        padding: 3rem 0;
+        /* Changed side padding to 0 */
+        display: flex;
+        justify-content: center;
+        /* Centers the inner container */
+    }
+
+    .footer-container {
+        width: 100%;
+        max-width: 1200px;
+        /* Limits content width so it looks professional */
+        padding: 0 2rem;
+        /* Adds internal breathing room */
+
+        /* Your existing Grid settings */
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            "logo dest comm asis"
+            "social dest comm asis"
+            "copy copy copy copy";
+        column-gap: 3rem;
+        row-gap: 1rem;
+    }
+
+    /* Logo pequeño */
+    .area-logo {
+        grid-area: logo;
+    }
+
+    .logo-box {
+        width: 100px;
+        height: 50px;
+        background-color: #ccc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #555;
+    }
+
+    /* Iconos horizontales */
+    .area-social {
+        grid-area: social;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 1rem;
+    }
+
+    /* Asistencia vertical normal */
+    .area-asis {
+        grid-area: asis;
+    }
+
+    .area-asis .asis-list {
+        display: block;
+    }
+
+    .area-asis li {
+        margin-bottom: 0.5rem;
+    }
+
+    /* Copyright izquierda/centro */
+    .area-copy {
+        grid-area: copy;
+        text-align: center;
+        margin-top: 2rem;
+        color: #000000;
+    }
+}
+
+body>footer {
+    align-self: stretch;
+    /* Fixes width if body is a flex container */
+    flex-shrink: 0;
+}
+
+.site-logo-footer {
+  width: 100px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}

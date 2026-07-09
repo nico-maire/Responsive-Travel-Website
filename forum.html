@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="i18n-title" content="page_forum_title">
+  <meta name="i18n-description" content="page_forum_desc">
+  <title>Foro - Comunidad</title>
+  <link rel="icon" href="images/travel-svgrepo-com.svg" type="image/x-icon">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+  <header></header>
+
+  <!-- Community Navigation Tabs -->
+  <div class="tabs-navigation">
+    <div class="tabs-container">
+      <div class="tabs-container">
+        <a href="community.html" class="tab-btn" data-i18n="tab_all">Todo</a>
+        <a class="tab-btn active" data-i18n="nav_forum">Foro</a>
+        <a href="blog.html" class="tab-btn" data-i18n="nav_blog">Blog</a>
+        <a href="tips.html" class="tab-btn" data-i18n="tab_tips">Consejos</a>
+      </div>
+    </div>
+  </div>
+
+
+  <main>
+    <div class="forum-search-wrapper">
+      <div class="forum-search-bar">
+        <input id="forum-search" type="search" placeholder="Buscar en los hilos..."
+          data-i18n-placeholder="forum_search_ph" aria-label="Buscar hilos" data-i18n-aria="forum_search_aria">
+        <i class="fa fa-search search-icon" aria-hidden="true"></i>
+      </div>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <h2 data-i18n="forum_trending">Trending Topics</h2>
+      <!-- IMPORTANTE: Texto envuelto en span para no borrar el icono -->
+      <button id="btn-open-modal" class="btn-create-post">
+        <i class="fa-solid fa-plus" aria-hidden="true"></i>
+        <span data-i18n="btn_create_thread">Crear Nuevo Hilo</span>
+      </button>
+    </div>
+
+    <!-- Container where JS will inject the posts -->
+    <div id="forum-posts-container" class="forum-list"></div>
+
+    <div class="load-more-container">
+      <button id="btn-load-more" class="btn-load-more">Cargar más</button>
+    </div>
+  </main>
+
+
+  <!-- 2. NEW MODAL STRUCTURE -->
+  <div class="modal-content">
+    <h3 data-i18n="modal_create_title">Crear nuevo tema</h3>
+    <form id="new-post-form" class="modal-form">
+
+      <label for="post-title" data-i18n="label_post_title">Título</label>
+      <input type="text" id="post-title" placeholder="Ej: Viaje a Perú en Agosto..."
+        data-i18n-placeholder="ph_post_title" required>
+
+      <label for="post-content" data-i18n="label_post_content">Mensaje Inicial</label>
+      <textarea id="post-content" placeholder="Escribe los detalles de tu pregunta..."
+        data-i18n-placeholder="ph_post_content" required></textarea>
+
+      <div class="modal-actions">
+        <button type="button" id="btn-cancel-modal" class="btn-cancel" data-i18n="btn_cancel">Cancelar</button>
+        <button type="submit" class="btn-submit-post" data-i18n="btn_publish">Publicar</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="contact-component"></div>
+
+  <footer></footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script type="module" src="script/app.js"></script>
+
+</body>
+
+</html>

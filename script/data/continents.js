@@ -1,0 +1,1 @@
+export const CONTINENTS = ['Europa', 'Asia', 'África', 'Norteamérica', 'Sudamérica', 'Oceanía'];

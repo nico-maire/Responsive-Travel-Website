@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="i18n-title" content="page_blog_title">
+  <meta name="i18n-description" content="page_blog_desc">
+  <title>Travel Blog - Wanderlust Travels</title>
+  <link rel="icon" href="images/travel-svgrepo-com.svg" type="image/x-icon">
+
+  <!-- 1. Ruta CSS correcta -->
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body id="page-blog">
+
+  <!-- HEADER (Inyectado por jQuery) -->
+  <header></header>
+
+  <!-- Community Navigation Tabs -->
+  <div class="tabs-navigation">
+
+    <div class="tabs-container">
+      <a href="community.html" class="tab-btn" data-i18n="tab_all">Todo</a>
+      <a href="forum.html" class="tab-btn" data-i18n="nav_forum">Foro</a>
+      <a class="tab-btn active" data-i18n="nav_blog">Blog</a>
+      <a href="tips.html" class="tab-btn" data-i18n="tab_tips">Consejos</a>
+    </div>
+
+
+  </div>
+
+  <!-- Main Content -->
+  <main class="blog-main">
+    <div class="container blog-container">
+      <!-- Toolbar (Search & Filter) -->
+      <div class="blog-toolbar">
+        <div class="blog-search-wrapper">
+          <input type="text" id="blog-search" class="blog-search-input" placeholder="Buscar artículos..."
+            data-i18n-placeholder="blog_search_ph" aria-label="Buscar" data-i18n-aria="blog_search_aria">
+          <svg class="blog-search-icon" aria-hidden="true" width="20" height="20" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </div>
+
+        <div class="blog-filters">
+
+          <button class="blog-filter-btn active" data-category="all" data-i18n="filter_all">Todos</button>
+          <button class="blog-filter-btn" data-category="adventure" data-i18n="filter_adventure">Aventura</button>
+          <button class="blog-filter-btn" data-category="culture" data-i18n="filter_culture">Cultura</button>
+          <button class="blog-filter-btn" data-category="tips" data-i18n="filter_tips">Consejos</button>
+
+
+        </div>
+      </div>
+
+      <!-- Blog Grid -->
+      <div id="blog-grid" class="blog-grid">
+        <!-- Cards inyectadas por jQuery -->
+      </div>
+
+      <!-- Load More Button -->
+      <div class="blog-load-more-wrapper">
+
+        <button id="blog-load-more" class="btn-secondary" data-i18n="btn_load_more">
+          Cargar más artículos
+        </button>
+
+
+      </div>
+
+    </div>
+  </main>
+
+  <div class="contact-component"></div>
+
+  <!-- FOOTER (Inyectado por jQuery) -->
+  <footer></footer>
+
+  <!-- 2. SCRIPTS -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script type="module" src="script/app.js"></script>
+</body>
+
+</html>

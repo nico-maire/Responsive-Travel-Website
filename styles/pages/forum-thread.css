@@ -1,0 +1,348 @@
+/* src/styles/pages/forum-thread.css */
+
+/* --- Page Layout --- */
+body {
+    background-color: #f9f9f9;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    margin: 0;
+    padding-bottom: 160px;
+}
+
+.thread-layout {
+    max-width: 800px;
+    /* Slightly narrower for better reading experience */
+    margin: 0 auto;
+    padding: 20px;
+    padding-top: 40px;
+}
+
+.thread-title {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 40px;
+    color: #1a1a1a;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+.messages-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    /* More space between messages */
+}
+
+/* --- Message Rows --- */
+.message-row {
+    display: flex;
+    align-items: flex-end;
+    /* Aligns avatar with the bottom of the message */
+    gap: 12px;
+    width: 100%;
+}
+
+.message-row.sent {
+    justify-content: flex-end;
+}
+
+.message-row.received {
+    justify-content: flex-start;
+}
+
+/* --- Avatars --- */
+.avatar {
+    width: 38px;
+    height: 38px;
+    background-color: #e0e0e0;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    font-size: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- Bubbles General --- */
+.bubble {
+    max-width: 75%;
+    padding: 18px 22px;
+    border-radius: 18px;
+    font-size: 15px;
+    line-height: 1.6;
+    position: relative;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    word-wrap: break-word;
+    /* Prevents long words breaking layout */
+}
+
+/* --- Received Bubble (Left) --- */
+.message-row.received .bubble {
+    background-color: #ffffff;
+    color: #333;
+    border: 1px solid #e5e5e5;
+    border-bottom-left-radius: 4px;
+    /* "Chat tail" effect */
+}
+
+/* --- Sent Bubble (Right) --- */
+.message-row.sent .bubble {
+    background-color: #2c3e50;
+    /* A nice professional dark blue/grey */
+    color: #ffffff;
+    border-bottom-right-radius: 4px;
+    /* "Chat tail" effect */
+}
+
+/* --- Special Layout: Text + Image (The 3rd message example) --- */
+.bubble.has-image-layout {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    min-width: 500px;
+    /* Forces width to look like a "card" */
+}
+
+.bubble.has-image-layout .text-content {
+    flex: 1;
+}
+
+.bubble.has-image-layout .image-content {
+    width: 120px;
+    height: 100px;
+    background-color: #ffffff20;
+    /* Semi-transparent on dark background */
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.image-placeholder-icon {
+    width: 32px;
+    height: 32px;
+    opacity: 0.5;
+    color: white;
+}
+
+/* --- Special Layout: Image Only --- */
+.bubble.image-only {
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    overflow: hidden;
+    border-radius: 18px;
+    border: 1px solid #eee;
+}
+
+.big-image-placeholder {
+    width: 100%;
+    max-width: 400px;
+    height: 250px;
+    background-color: #e9ecef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #adb5bd;
+}
+
+.big-image-placeholder svg {
+    width: 60px;
+    height: 60px;
+}
+
+/* --- Input Area (Fixed Bottom) --- */
+.input-area {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    z-index: 1000;
+
+    /* Fix: Add background so messages don't show behind it */
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    /* Apple-like glass effect */
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+
+    display: flex;
+    justify-content: center;
+}
+
+.input-wrapper {
+    width: 100%;
+    max-width: 800px;
+    /* Matches main container */
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.input-wrapper input {
+    flex: 1;
+    padding: 14px 20px;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    /* Pill shape */
+    font-size: 15px;
+    outline: none;
+    background-color: #fff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.input-wrapper input:focus {
+    border-color: #aaa;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+}
+
+.action-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: none;
+    background-color: #f0f0f0;
+    color: #333;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.btn-icon:hover {
+    background-color: #e0e0e0;
+    transform: translateY(-2px);
+}
+
+.btn-icon.close-btn {
+    background-color: #ffe5e5;
+    color: #d32f2f;
+}
+
+.btn-icon.close-btn:hover {
+    background-color: #ffcccc;
+}
+
+.thread-layout {
+    width: 60%;
+    /* Exactly 60% of the viewport width */
+    max-width: none;
+    /* Remove pixel limitations */
+    margin: 0 auto;
+    /* Center it */
+    padding: 20px;
+    padding-top: 40px;
+}
+
+/* 2. Input Area: Match the 80% width */
+.input-wrapper {
+    width: 60%;
+    /* Matches .thread-layout */
+    max-width: none;
+    /* Remove pixel limitations */
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* 3. Bubbles: Adjust so lines aren't too long to read on wide screens */
+.bubble {
+    max-width: 55%;
+    /* On a wide 80% container, 55% is a good sweet spot for readability */
+    padding: 18px 22px;
+    border-radius: 18px;
+    font-size: 15px;
+    line-height: 1.6;
+    position: relative;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    word-wrap: break-word;
+}
+
+.message-row.topic-starter {
+    justify-content: flex-start;
+    /* Align Left */
+    margin-bottom: 25px;
+    /* Give it a bit more space before replies start */
+}
+
+.message-row.topic-starter .bubble {
+    background-color: #000000;
+    /* Bright Blue */
+    color: #ffffff;
+    /* White Text */
+    border-radius: 18px;
+    border-bottom-left-radius: 4px;
+    /* Tail on left */
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+    /* Subtle glow */
+    font-size: 16px;
+    /* Slightly larger text */
+    font-weight: 500;
+}
+
+.message-row.topic-starter .avatar {
+    background-color: #000000;
+    /* Darker blue for avatar */
+    color: white;
+}
+
+/* 4. Responsive: On mobile, 80% is too narrow, so we expand it back */
+@media (max-width: 768px) {
+    .thread-layout {
+        width: 95%;
+        /* Use more space on mobile */
+        padding: 15px;
+        padding-top: 20px;
+    }
+
+    .input-wrapper {
+        width: 95%;
+        /* Match layout on mobile */
+    }
+
+    .bubble {
+        max-width: 85%;
+        /* Allow bubbles to be wider on small screens */
+    }
+
+    /* Stack the complex text+image layout on mobile */
+    .bubble.has-image-layout {
+        flex-direction: column;
+        min-width: auto;
+        align-items: flex-start;
+    }
+
+    .bubble.has-image-layout .image-content {
+        width: 100%;
+        height: 150px;
+        margin-top: 10px;
+    }
+
+    .input-wrapper input {
+        padding: 12px 15px;
+    }
+
+    .btn-icon {
+        width: 40px;
+        height: 40px;
+    }
+}

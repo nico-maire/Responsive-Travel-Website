@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="i18n-title" content="page_booking_title">
+  <title>Proceso de Reserva</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+  <header></header>
+
+  <!-- Top Navigation / Progress Bar -->
+  <div class="progress-container">
+    <div class="progress-step active" id="tab-1">
+      <span data-i18n="step_1_nav">Pasajeros y Opciones</span>
+    </div>
+    <div class="progress-step" id="tab-2">
+      <span data-i18n="step_2_nav">Datos Personales</span>
+    </div>
+    <div class="progress-step" id="tab-3">
+      <span data-i18n="step_3_nav">Finalizar y Pagar</span>
+    </div>
+  </div>
+
+  <!-- Main Form Container -->
+  <div class="booking-form-card">
+    <form id="bookingForm" onsubmit="event.preventDefault()">
+
+      <!-- STEP 1: Travelers & Options -->
+      <div class="step-content active" id="step-1">
+        <h2 data-i18n="step_1_heading">Paso 1: Viajeros y Acompañantes</h2>
+
+        <!-- 1. COMPANIONS TRIGGER (Dropdown) -->
+        <div class="form-group">
+          <label for="numCompanions" style="font-weight: bold;" data-i18n="label_companions">¿Viajas con
+            acompañantes?</label>
+          <select id="numCompanions">
+            <option value="0" data-i18n="opt_solo">No, viajo solo</option>
+            <option value="1" data-i18n="opt_comp_1">Sí, 1 acompañante</option>
+            <option value="2" data-i18n="opt_comp_2">Sí, 2 acompañantes</option>
+            <option value="3" data-i18n="opt_comp_3">Sí, 3 acompañantes</option>
+            <option value="4" data-i18n="opt_comp_4">Sí, 4 acompañantes</option>
+            <option value="5" data-i18n="opt_comp_5">Sí, 5 acompañantes</option>
+          </select>
+        </div>
+
+        <!-- Companions Inputs (Hidden by default, reveals based on selection) -->
+        <div id="companionsContainer" class="hidden">
+          <div class="form-row" id="row-companion-1">
+            <label data-i18n="label_comp_name_1">Nombre Acompañante 1</label>
+            <input type="text" id="companion1" placeholder="Nombre completo" data-i18n-placeholder="ph_full_name"
+              aria-label="Nombre del acompañante 1" data-i18n-aria="aria_comp_1">
+          </div>
+          <div class="form-row" id="row-companion-2">
+            <label data-i18n="label_comp_name_2">Nombre Acompañante 2</label>
+            <input type="text" id="companion2" placeholder="Nombre completo" data-i18n-placeholder="ph_full_name"
+              aria-label="Nombre del acompañante 2" data-i18n-aria="aria_comp_2">
+          </div>
+          <div class="form-row" id="row-companion-3">
+            <label data-i18n="label_comp_name_3">Nombre Acompañante 3</label>
+            <input type="text" id="companion3" placeholder="Nombre completo" data-i18n-placeholder="ph_full_name"
+              aria-label="Nombre del acompañante 3" data-i18n-aria="aria_comp_3">
+          </div>
+          <div class="form-row" id="row-companion-4">
+            <label data-i18n="label_comp_name_4">Nombre Acompañante 4</label>
+            <input type="text" id="companion4" placeholder="Nombre completo" data-i18n-placeholder="ph_full_name"
+              aria-label="Nombre del acompañante 4" data-i18n-aria="aria_comp_4">
+          </div>
+          <div class="form-row" id="row-companion-5">
+            <label data-i18n="label_comp_name_5">Nombre Acompañante 5</label>
+            <input type="text" id="companion5" placeholder="Nombre completo" data-i18n-placeholder="ph_full_name"
+              aria-label="Nombre del acompañante 5" data-i18n-aria="aria_comp_5">
+          </div>
+        </div>
+
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 25px 0;">
+
+        <!-- 2. PET TRIGGER (Dropdown) -->
+        <div class="form-group">
+          <label for="hasPet" style="font-weight: bold;" data-i18n="label_pet_q">¿Viajas con mascota?</label>
+          <select id="hasPet">
+            <option value="no" data-i18n="opt_no">No</option>
+            <option value="yes" data-i18n="opt_yes">Sí</option>
+          </select>
+        </div>
+
+        <!-- Pet Details (Reveals exact fields from screenshot) -->
+        < <div id="petContainer" class="hidden">
+          <div class="form-row split-label-input">
+            <label data-i18n="pet_type_label">Tipo de mascota</label>
+            <select id="petType">
+              <option disabled selected value="" data-i18n="pet_type_default">Selecciona el tipo de mascota</option>
+              <option value="perro" data-i18n="pet_dog">Perro</option>
+              <option value="gato" data-i18n="pet_cat">Gato</option>
+              <option value="roedor" data-i18n="pet_rodent">Conejo u otros roedores</option>
+              <option value="pajaro" data-i18n="pet_bird">Pájaro</option>
+            </select>
+          </div>
+          <div class="form-row split-label-input">
+            <label data-i18n="pet_size_label">Tamaño de mascota</label>
+            <select id="petSize">
+              <option disabled selected value="" data-i18n="pet_size_default">Selecciona el tamaño</option>
+              <option value="mini" data-i18n="size_mini">Mini (menos de 1 kg)</option>
+              <option value="pequeño" data-i18n="size_small">Pequeño (1 a 4 kg)</option>
+              <option value="mediano" data-i18n="size_medium">Mediano (4 a 10 kg)</option>
+              <option value="grande" data-i18n="size_large">Grande (10 a 20 kg)</option>
+              <option value="xxl" data-i18n="size_xxl">XXL (más de 20 kg)</option>
+            </select>
+          </div>
+          <div class="form-group checkbox-row nested-checkbox">
+            <input type="checkbox" id="petPolicy">
+            <label for="petPolicy" data-i18n="label_pet_policy">Al hacer click indico que he leído y acepto la Normativa
+              sobre viaje con mascotas</label>
+          </div>
+      </div>
+
+      <hr style="border: 0; border-top: 1px solid #eee; margin: 25px 0;">
+
+      <!-- 3. ALLERGIES TRIGGER (Dropdown) -->
+      <div class="form-group">
+        <label for="hasAllergies" style="font-weight: bold;" data-i18n="label_allergies">¿Intolerancias o
+          Alergias?</label>
+        <select id="hasAllergies">
+          <option value="no" data-i18n="opt_no">No</option>
+          <option value="yes" data-i18n="opt_yes">Sí</option>
+        </select>
+      </div>
+
+      <!-- Allergies Details -->
+      <div id="allergiesContainer" class="hidden">
+        <div class="form-row split-label-input align-top">
+          <label data-i18n="label_additional_info">Información adicional</label>
+          <textarea id="allergyInfo" placeholder="Describe..." data-i18n-placeholder="ph_allergies" rows="3"></textarea>
+        </div>
+      </div>
+
+      <!-- Step 1 Button -->
+      <button type="button" class="btn-primary mt-6" id="btn-step-1" data-i18n="btn_next_personal">
+        Guardar y pasar a Datos Personales
+      </button>
+  </div>
+
+  <!-- STEP 2: Personal Data -->
+  <div class="step-content" id="step-2">
+    <h2 data-i18n="step_2_heading">Paso 2: Datos Personales</h2>
+
+    <div class="form-group">
+      <label data-i18n="label_name">Nombre</label>
+      <input type="text" id="firstName" placeholder="Tu nombre" data-i18n-placeholder="ph_name" aria-label="Nombre"
+        data-i18n-aria="label_name">
+    </div>
+
+    <div class="form-group">
+      <label data-i18n="label_surname">Apellidos</label>
+      <input type="text" id="lastName" placeholder="Value">
+    </div>
+    <div class="form-group">
+      <label data-i18n="label_email">Email</label>
+      <input type="email" id="email" placeholder="Value">
+    </div>
+
+    <div class="form-group">
+      <label data-i18n="label_address">Dirección</label>
+      <div class="address-grid">
+        <select id="country">
+          <option>España</option>
+        </select>
+        <select id="city">
+          <option>Madrid</option>
+        </select>
+        <select id="district">
+          <option>Leganés</option>
+        </select>
+        <input type="text" id="zipCode" placeholder="Código Postal" data-i18n-placeholder="ph_zip">
+      </div>
+      <input type="text" id="streetAddress" placeholder="Calle y número" data-i18n-placeholder="ph_street"
+        class="mt-2 full-width">
+      <input type="text" id="addressDetails" placeholder="Más detalles" data-i18n-placeholder="ph_details"
+        class="mt-2 full-width">
+    </div>
+
+    <div class="form-group">
+      <label data-i18n="label_phone">Teléfono móvil</label>
+      <div class="phone-group">
+        <select class="phone-prefix" id="phonePrefix">
+          <option>+34</option>
+        </select>
+        <input type="tel" id="phoneNumber" placeholder="Value">
+      </div>
+    </div>
+
+
+
+    <!-- Step 2 Button -->
+    <button type="button" class="btn-primary mt-6" id="btn-step-2" data-i18n="btn_next_pay">
+      Guardar y pasar a Finalizar y Pagar
+    </button>
+
+    <!-- STEP 3: Finalize & Pay -->
+    <div class="step-content" id="step-3">
+      <h2 data-i18n="step_3_heading">Paso 3: Finalizar y Pagar</h2>
+
+      <div class="form-group">
+        <label data-i18n="label_card_num">Número de tarjeta</label>
+        <div class="card-input-wrapper">
+          <div class="card-icon">
+            <span class="circle red"></span>
+            <span class="circle orange"></span>
+          </div>
+          <input type="text" id="cardNumber" placeholder="5867 5362 5626 26 25"
+            aria-label="Introduce numero de tarjeta">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label data-i18n="label_card_holder">Nombre del Titular</label>
+        <input type="text" id="cardHolder" placeholder="Value">
+      </div>
+
+      <div class="grid-2-col">
+        <div class="form-group">
+          <label data-i18n="label_expiry">Fecha Caducidad</label>
+          <input type="text" id="cardExpiry" placeholder="06/25">
+        </div>
+        <div class="form-group">
+          <label data-i18n="label_cvv">CVV</label>
+          <input type="text" id="cardCvv" placeholder="555">
+        </div>
+      </div>
+
+      <div class="form-group checkbox-row mt-4">
+        <input type="checkbox" id="termsAccepted" aria-label="Introduce si aceptas condiciones">
+        <label for="termsAccepted" data-i18n-html="label_terms_link">
+          He leído y acepto los <a href="#">Términos de compra</a>
+        </label>
+      </div>
+
+      <!-- Step 3 Button -->
+      <button type="button" class="btn-primary mt-6" id="btn-submit" data-i18n="btn_pay">Pagar</button>
+    </div>
+
+    </form>
+  </div>
+
+  <div class="contact-component"></div>
+
+  <footer></footer>
+
+  <!-- Main Entry Point Script -->
+  <script type="module" src="script/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,150 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #ffffff;
+    color: #000;
+}
+
+/* Main Container Layout */
+.profile-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* 1. Name and Avatar */
+.profile-name {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #1a1a1a;
+}
+
+.avatar-wrapper {
+    width: 140px;
+    height: 140px;
+    background-color: #ced1d6;
+    /* The light gray placeholder color */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    /* Aligns the icon to the bottom slightly like a bust */
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.avatar-wrapper i {
+    font-size: 110px;
+    color: #f0f2f5;
+    /* Lighter gray for the silhouette */
+    transform: translateY(15px);
+    /* Push it down slightly to look like a head/shoulders */
+}
+
+/* 2. Bio Section */
+.bio-section {
+    margin-bottom: 25px;
+    max-width: 500px;
+}
+
+.bio-section h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.bio-section p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* 3. Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.btn-profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #b0b0b0;
+    /* Darker gray for buttons */
+    border: none;
+    border-radius: 6px;
+    padding: 10px 30px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #1a1a1a;
+    min-width: 140px;
+    transition: background-color 0.2s;
+}
+
+.btn-profile:hover {
+    background-color: #999;
+}
+
+.btn-profile i {
+    font-size: 18px;
+}
+
+/* 4. Badges Section */
+.badges-section h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.badges-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.badge-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.badge-circle {
+    width: 100px;
+    height: 100px;
+    background-color: #cccccc;
+    /* Gray background for badge */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.badge-circle i {
+    font-size: 40px;
+    color: #333;
+    /* Dark icon color */
+    /* Simulating the outlined medal look */
+    -webkit-text-stroke: 1px #333;
+}
+
+.badge-item span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a1a1a;
+}

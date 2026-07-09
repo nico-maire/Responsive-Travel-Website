@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explora todos los destinos disponibles en Wanderlust Travels">
+  <meta name="i18n-title" content="page_destinations_title">
+  <meta name="i18n-description" content="page_destinations_desc">
+  <title>Destinos - Wanderlust Travels</title>
+  <link rel="icon" href="images/travel-svgrepo-com.svg" type="image/x-icon">
+
+  <!-- 1. Ruta CSS correcta -->
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body id="page-destinations">
+
+  <!-- HEADER (Inyectado por jQuery) -->
+  <header></header>
+
+  <main class="destinations-main">
+
+    <!-- Sub-Navigation (Tabs) -->
+    <div class="tabs-navigation">
+      <div class="tabs-container">
+        <button class="tab-btn active" data-tab="todo" data-i18n="tab_all">Todo</button>
+        <button class="tab-btn" data-tab="populares" data-i18n="tab_popular">Populares</button>
+        <button class="tab-btn" data-tab="continentes" data-i18n="tab_continents">Continentes</button>
+      </div>
+    </div>
+
+    <div class="container destinations-content" style="margin-top: 2rem;">
+
+      <!-- Filter Panel (Hidden by default on 'Todo' tab) -->
+      <div id="filters-panel" class="filters-panel" style="display: none;">
+
+        <!-- Search Bar -->
+        <div class="search-container">
+
+          <input type="text" id="dest-search" class="search-input" placeholder="Buscar por destino..."
+            data-i18n-placeholder="dest_search_ph" aria-label="Buscar destino" data-i18n-aria="dest_search_aria">
+          <!-- Añadido aria-hidden="true" al icono -->
+          <svg class="search-icon" aria-hidden="true" width="16" height="16" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+
+
+        </div>
+
+        <!-- Tags & Continent Filters -->
+        <div class="filters-tags-container">
+          <span class="badge-static" data-i18n="label_continents">Continentes:</span>
+
+          <!-- Selected Continents -->
+          <div id="selected-continents" class="selected-tags"></div>
+
+          <!-- Available Continents -->
+          <div id="available-continents" class="available-tags">
+            <!-- Inyectado por JS -->
+          </div>
+        </div>
+
+        <!-- Advanced Filters (Price & Duration) -->
+        <div class="advanced-filters">
+
+          <!-- Price Slider -->
+          <div class="filter-group">
+            <div class="slider-header">
+              <span class="filter-label-small" data-i18n="label_price_max">Precio Máximo</span>
+              <span class="slider-value" id="price-value">3000€</span>
+            </div>
+            <!-- Corregido aria-label que estaba mal en tu original -->
+            <input type="range" id="price-slider" min="500" max="5000" step="100" value="3000" class="slider"
+              aria-label="Seleccionar precio máximo" data-i18n-aria="aria_price_max">
+          </div>
+
+          <!-- Duration Slider -->
+          <div class="filter-group">
+            <div class="slider-header">
+              <span class="filter-label-small" data-i18n="label_duration_max">Duración Máxima</span>
+              <span class="slider-value" id="duration-value">30 días</span>
+            </div>
+            <!-- Corregido aria-label que estaba mal en tu original -->
+            <input type="range" id="duration-slider" min="3" max="30" step="1" value="30" class="slider"
+              aria-label="Seleccionar duración máxima" data-i18n-aria="aria_duration_max">
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Results Container -->
+      <div id="trips-container">
+        <!-- Content will be injected by JavaScript based on active tab -->
+      </div>
+
+      <!-- Contact Section -->
+      <div class="contact-component"></div>
+
+    </div>
+
+  </main>
+
+  <div class="contact-component"></div>
+
+
+  <!-- FOOTER (Inyectado por jQuery) -->
+  <footer></footer>
+
+  <!-- 2. SCRIPTS -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script type="module" src="script/app.js"></script>
+
+</body>
+
+</html>

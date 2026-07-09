@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- TRADUCCIÓN: Meta etiquetas para el título de la pestaña -->
+  <meta name="i18n-title" content="page_trip_details_title">
+  <meta name="i18n-description" content="page_trip_details_desc">
+
+  <title>Detalles del Viaje</title>
+  <link rel="icon" href="images/travel-svgrepo-com.svg" type="image/x-icon">
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- FontAwesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- ✅ HEADER (Necesario para el menú) -->
+  <header></header>
+
+  <main class="details-container">
+
+    <!-- Top Section: Image & Info -->
+    <section class="product-wrapper">
+
+      <!-- Left: Image -->
+      <div class="product-image-container">
+        <!-- WAVE FIX: Icono decorativo oculto -->
+        <div class="tag-icon"><i class="fa-solid fa-tag" aria-hidden="true"></i></div>
+
+        <!-- ID para JS. Añadido data-i18n-alt para tener texto alternativo mientras carga -->
+        <img id="detail-image" src="" data-i18n-alt="trip_image_alt_default" alt="Imagen del viaje" class="main-image">
+      </div>
+
+      <!-- Right: Info -->
+      <div class="product-info">
+
+        <h1 id="detail-title" class="product-title" data-i18n="loading_trip">Cargando viaje...</h1>
+
+        <!-- Estado inicial (JS lo cambiará luego, pero esto se traduce al cargar) -->
+        <div class="status-badge" data-i18n="status_spots_default">Consultando plazas...</div>
+
+        <div class="price-block">
+          $<span id="detail-price">0</span>
+        </div>
+
+        <div class="meta-date">
+          <span id="detail-date">25 NOV 2025</span> -
+          <span id="detail-days">0</span> <span data-i18n="suffix_days">días</span>
+        </div>
+
+        <!-- Accordion -->
+        <div class="accordion-box">
+          <!-- WAVE FIX: Añadido role y tabindex para accesibilidad con teclado -->
+          <div class="accordion-header" id="accordion-toggle" role="button" tabindex="0" aria-expanded="true">
+            <span data-i18n="trip_details_label">Detalles del viaje</span>
+            <i class="fa-solid fa-chevron-up" id="accordion-icon" aria-hidden="true"></i>
+          </div>
+          <div class="accordion-content" id="accordion-body">
+            <p id="detail-description" data-i18n="loading_desc">
+              Cargando descripción...
+            </p>
+          </div>
+        </div>
+
+        <button class="btn-buy" id="btn-buy" data-i18n="btn_buy">Comprar</button>
+      </div>
+    </section>
+
+    <!-- Bottom Section: Reviews -->
+    <section class="reviews-section">
+      <h2 class="section-title" data-i18n="reviews_section_title">Opiniones de viajes similares</h2>
+
+      <div class="reviews-grid" id="reviews-container"></div>
+
+      <!-- Review Form will be injected here -->
+      <div id="review-form-container" class="review-form-section"></div>
+    </section>
+
+  </main>
+
+  <!-- ✅ CONTACTO Y FOOTER (Necesarios para la estructura global) -->
+  <div class="contact-component"></div>
+  <footer></footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script type="module" src="script/app.js"></script>
+</body>
+
+</html>

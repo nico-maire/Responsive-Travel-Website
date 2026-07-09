@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Asegúrate de tener estas claves en tu fichero de traducciones si quieres traducir el título de la pestaña -->
+  <meta name="i18n-title" content="page_home_title">
+  <meta name="i18n-description" content="page_home_description">
+
+  <title>WanderLust</title>
+  <link rel="icon" href="images/travel-svgrepo-com.svg" type="image/x-icon">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+
+  <header></header>
+
+  <!-- Hero / Carousel Section -->
+  <section class="hero-section" id="heroCarousel">
+    <button class="nav-arrow left" id="prevBtn">&larr;</button>
+
+    <!-- Window that hides the overflow -->
+    <div class="carousel-window">
+      <!-- The moving track -->
+      <div class="carousel-track" id="track">
+
+        <div class="carousel-slide">
+          <div class="slide-content">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Beach">
+          </div>
+        </div>
+
+        <div class="carousel-slide">
+          <div class="slide-content">
+            <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" alt="Mountains">
+          </div>
+        </div>
+
+        <div class="carousel-slide">
+          <div class="slide-content">
+            <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c" alt="City">
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <button class="nav-arrow right" id="nextBtn" aria-label="Siguiente">&rarr;</button>
+  </section>
+
+  <main class="container">
+
+    <!-- Popular Trips Section -->
+    <section class="section">
+      <!-- Data-i18n ya estaba correcto aquí -->
+      <h2 class="section-title" data-i18n="Viajes_Populares">Viajes Populares</h2>
+
+      <div class="trips-grid">
+        <!-- Trip Card 1 -->
+        <article class="trip-card">
+          <div class="card-image">
+            <svg class="placeholder-icon-small" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+              stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <circle cx="8.5" cy="8.5" r="1.5"></circle>
+              <polyline points="21 15 16 10 5 21"></polyline>
+            </svg>
+          </div>
+          <h3 class="card-title">Viaje popular 1</h3>
+          <!-- TRADUCCIÓN: Añadido data-i18n="view_more" -->
+          <button class="btn-dark" data-i18n="view_more">Ver más</button>
+        </article>
+
+        <!-- Trip Card 2 -->
+        <article class="trip-card">
+          <div class="card-image">
+            <svg class="placeholder-icon-small" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+              stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <circle cx="8.5" cy="8.5" r="1.5"></circle>
+              <polyline points="21 15 16 10 5 21"></polyline>
+            </svg>
+          </div>
+          <h3 class="card-title">Viaje popular 2</h3>
+          <button class="btn-dark" data-i18n="view_more">Ver más</button>
+        </article>
+
+        <!-- Trip Card 3 -->
+        <article class="trip-card">
+          <div class="card-image">
+            <svg class="placeholder-icon-small" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+              stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <circle cx="8.5" cy="8.5" r="1.5"></circle>
+              <polyline points="21 15 16 10 5 21"></polyline>
+            </svg>
+          </div>
+          <h3 class="card-title">Viaje popular 3</h3>
+          <button class="btn-dark" data-i18n="view_more">Ver más</button>
+        </article>
+
+        <!-- Trip Card 4 -->
+        <article class="trip-card">
+          <div class="card-image">
+            <svg class="placeholder-icon-small" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+              stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <circle cx="8.5" cy="8.5" r="1.5"></circle>
+              <polyline points="21 15 16 10 5 21"></polyline>
+            </svg>
+          </div>
+          <h3 class="card-title">Viaje popular 4</h3>
+          <button class="btn-dark" data-i18n="view_more">Ver más</button>
+        </article>
+
+        <!-- Trip Card 5 -->
+        <article class="trip-card">
+          <div class="card-image">
+            <svg class="placeholder-icon-small" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+              stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <circle cx="8.5" cy="8.5" r="1.5"></circle>
+              <polyline points="21 15 16 10 5 21"></polyline>
+            </svg>
+          </div>
+          <h3 class="card-title">Viaje popular 5</h3>
+          <button class="btn-dark" data-i18n="view_more">Ver más</button>
+        </article>
+
+        <!-- Trip Card 6 -->
+        <article class="trip-card">
+          <div class="card-image">
+            <svg class="placeholder-icon-small" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"
+              stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <circle cx="8.5" cy="8.5" r="1.5"></circle>
+              <polyline points="21 15 16 10 5 21"></polyline>
+            </svg>
+          </div>
+          <h3 class="card-title">Viaje popular 6</h3>
+          <button class="btn-dark" data-i18n="view_more">Ver más</button>
+        </article>
+      </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="section">
+      <h2 class="section-title" data-i18n="Lo_que_opinan_nuestros_usuarios">Lo que opinan nuestros usuarios</h2>
+
+      <div class="reviews-grid">
+
+        <!-- Review 1 -->
+        <article class="review-card">
+          <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+          <h3 class="review-title">¡Inolvidable experiencia en Bali!</h3>
+          <p class="review-body">La organización fue perfecta de principio a fin. Los guías locales eran muy amables y
+            los hoteles superaron mis expectativas.</p>
+          <div class="user-info">
+            <div class="avatar">
+              <!-- Generic User Icon -->
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+              </svg>
+            </div>
+            <div class="user-text">
+              <span class="user-name">Laura García</span>
+              <span class="user-date">10 NOV 2025</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Review 2 -->
+        <article class="review-card">
+          <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+          <h3 class="review-title">Atención al cliente de 10</h3>
+          <p class="review-body">Tuve un pequeño problema con mi vuelo de conexión y el equipo de soporte lo solucionó
+            en minutos. Da mucha seguridad viajar así.</p>
+          <div class="user-info">
+            <div class="avatar">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+              </svg>
+            </div>
+            <div class="user-text">
+              <span class="user-name">Pablo Ruiz</span>
+              <span class="user-date">05 NOV 2025</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Review 3 -->
+        <article class="review-card">
+          <div class="stars" aria-label="4 de 5 estrellas">★★★★☆</div>
+          <h3 class="review-title">Nueva York en Navidad</h3>
+          <p class="review-body">Un viaje mágico. Hacía mucho frío, pero ver la ciudad nevada valió la pena. El
+            itinerario fue muy completo y divertido.</p>
+          <div class="user-info">
+            <div class="avatar">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+              </svg>
+            </div>
+            <div class="user-text">
+              <span class="user-name">Carmen Díaz</span>
+              <span class="user-date">01 NOV 2025</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Review 4 -->
+        <article class="review-card">
+          <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+          <h3 class="review-title">Aventura total en Kenia</h3>
+          <p class="review-body">Ver animales en libertad ha sido un sueño cumplido. Las tiendas de campaña de lujo eran
+            increíbles. ¡Repetiré seguro!</p>
+          <div class="user-info">
+            <div class="avatar">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+              </svg>
+            </div>
+            <div class="user-text">
+              <span class="user-name">Marc Soler</span>
+              <span class="user-date">28 OCT 2025</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <div class="contact-component"></div>
+
+  <footer></footer>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script type="module" src="script/app.js"></script>
+</body>
+
+</html>

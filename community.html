@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comunidad - Wanderlust Travels</title>
+  <link rel="icon" href="images/travel-svgrepo-com.svg" type="image/x-icon">
+
+  <!-- 1. Ruta CSS correcta -->
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body id="page-community">
+
+  <!-- HEADER (Inyectado por jQuery) -->
+  <header></header>
+
+  <!-- Community Navigation Tabs -->
+  <div class="tabs-navigation">
+    <div class="tabs-container">
+      <a class="tab-btn active">Todo</a>
+      <a href="forum.html" class="tab-btn">Foro</a>
+      <a href="blog.html" class="tab-btn">Blog</a>
+      <a href="tips.html" class="tab-btn">Consejos</a>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="community-main">
+
+    <div class="container community-content-container">
+
+      <!-- TAB: TODO (Dashboard) -->
+      <div id="view-todo" class="community-view active">
+
+        <!-- Forum Preview -->
+        <section class="dashboard-section">
+          <div class="dashboard-section-header">
+            <h2>Últimas Discusiones</h2>
+            <button class="btn-link switch-tab-btn" data-target="forum">Ir al foro &rarr;</button>
+          </div>
+          <div id="dashboard-forum-preview" class="dashboard-list"></div>
+        </section>
+
+        <!-- Blog Preview -->
+        <section class="dashboard-section">
+          <div class="dashboard-section-header">
+            <h2>Destacado en el Blog</h2>
+            <button class="btn-link switch-tab-btn" data-target="blog">Ver blog &rarr;</button>
+          </div>
+          <div id="dashboard-blog-preview" class="blog-grid"
+            style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));"></div>
+        </section>
+
+        <!-- Popular Travelers -->
+        <section class="dashboard-section">
+          <div class="dashboard-section-header">
+            <h2>Viajeros Populares</h2>
+            <button class="btn-link switch-tab-btn" data-target="travelers">Ver todos &rarr;</button>
+          </div>
+          <div id="dashboard-travelers-preview" class="travelers-grid-preview"></div>
+        </section>
+
+        <!-- Consejos Preview -->
+        <section class="dashboard-section">
+          <div class="dashboard-section-header">
+            <h2>Consejos Destacados</h2>
+            <button class="btn-link switch-tab-btn" data-target="tips">Ver todos &rarr;</button>
+          </div>
+          <!-- Usamos la misma clase grid que en la vista completa -->
+          <div id="dashboard-tips-preview" class="tips-grid"></div>
+        </section>
+
+      </div>
+
+      <!-- TAB: CONSEJOS -->
+      <div id="view-tips" class="community-view" style="display: none;">
+        <div class="tips-intro">
+          <h2>Consejos rápidos de la comunidad</h2>
+          <p>Pequeñas píldoras de sabiduría viajera.</p>
+        </div>
+        <div id="tips-list" class="tips-grid"></div>
+      </div>
+
+      <!-- TAB: VIAJEROS -->
+      <div id="view-travelers" class="community-view" style="display: none;">
+        <div id="travelers-grid" class="travelers-grid"></div>
+      </div>
+
+    </div>
+  </main>
+
+  <div class="contact-component"></div>
+
+
+  <!-- FOOTER (Inyectado por jQuery) -->
+  <footer></footer>
+
+  <!-- 2. SCRIPTS -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script type="module" src="script/app.js"></script>
+</body>
+
+</html>

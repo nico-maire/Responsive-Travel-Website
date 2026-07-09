@@ -1,0 +1,459 @@
+/* =========================================
+   VARIABLES LOCALES
+   ========================================= */
+:root {
+  --header-height: 70px;
+  --header-bg-color: #E5E5E5;
+  --header-menu-bg: #C4C4C4;
+  --header-item-bg: #D9D9D9;
+  --header-text-main: #1C1C1C;
+  --header-border-radius: 8px;
+}
+
+/* =========================================
+   BASE HEADER
+   ========================================= */
+header {
+  background-color: var(--header-bg-color);
+  height: var(--header-height);
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+  max-width: 1280px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+  position: relative;
+}
+
+/* Flexbox para alinear Logo - (Nav) - Acciones */
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+
+/* =========================================
+   LOGO
+   ========================================= */
+.logo-container .logo {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.logo-placeholder {
+  background-color: #A0A0A0;
+  color: #111;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+}
+
+/* =========================================
+   ELEMENTOS DE ESCRITORIO (OCULTOS EN MÓVIL)
+   ========================================= */
+/* 🔴 CRÍTICO: Esto evita que los botones se dupliquen en móvil */
+.nav-desktop,
+.desktop-auth {
+  display: none !important;
+}
+
+/* =========================================
+   ACCIONES (Derecha)
+   ========================================= */
+.header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  /* aligns to the right */
+  gap: 0.8rem;
+  /* space between hamburger & flag */
+}
+
+.btn-lang-flag {
+  background-color: #C4C4C4;
+  border: none;
+  border-radius: var(--header-border-radius);
+  width: 40px;
+  height: 40px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hamburger-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  z-index: 1002;
+}
+
+.hamburger-btn span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #000;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animación Hamburguesa */
+.hamburger-btn.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-btn.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-btn.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* =========================================
+   MENÚ MÓVIL (Overlay)
+   ========================================= */
+.mobile-menu {
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  width: 100%;
+  height: calc(100vh - var(--header-height));
+  background-color: var(--header-menu-bg);
+  padding: 1.5rem;
+  overflow-y: auto;
+  z-index: 999;
+
+  /* Lógica de ocultado */
+  display: block;
+  transform: translateX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Cuando tiene la clase hidden, lo sacamos de la pantalla */
+.mobile-menu.hidden {
+  transform: translateX(100%);
+  /* Opcional: display none después de la transición para performance, 
+     pero transform es suficiente visualmente */
+}
+
+.mobile-scroll-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-bottom: 3rem;
+}
+
+/* Auth en Móvil */
+.mobile-auth-section {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.mobile-auth-section a,
+.mobile-auth-section button {
+  flex: 1;
+  /* Para que ocupen el 50% cada uno */
+  text-align: center;
+  padding: 0.8rem;
+  border-radius: var(--header-border-radius);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+.mobile-auth-section .btn-secondary {
+  background-color: #EFEFEF;
+  color: #333;
+  border: 1px solid #CCC;
+}
+
+.mobile-auth-section .btn-primary {
+  background-color: #333;
+  color: white;
+}
+
+.mobile-auth-section {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  /* Add these two lines to handle the profile div correctly: */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Ensure the profile takes full width in mobile menu for better centering */
+.mobile-auth-section .user-profile {
+  justify-content: center;
+  width: 100%;
+  padding: 1rem;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+}
+
+/* Enlaces Navegación Móvil */
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.mobile-link {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--header-item-bg);
+  color: var(--header-text-main);
+  text-decoration: none;
+  padding: 1rem;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+.mobile-link .arrow {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  /* Space between avatar, name and button */
+  padding: 0 0.5rem;
+}
+
+/* Force the avatar to fit inside the header */
+.user-profile img {
+  width: 36px;
+  /* Fixed width */
+  height: 36px;
+  /* Fixed height */
+  border-radius: 50%;
+  /* Make it a circle */
+  object-fit: cover;
+  /* Prevents image distortion */
+  border: 1px solid #ddd;
+}
+
+.user-profile span {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.user-profile .btn-icon {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0 5px;
+  display: flex;
+  align-items: center;
+}
+
+.user-profile .btn-icon:hover {
+  transform: scale(1.1);
+}
+
+#btn-logout {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  /* Smaller gap between icon and text */
+  padding: 5px 12px;
+  /* Compact padding */
+
+  background-color: transparent;
+  color: #000000;
+  /* Red text */
+  border: 1px solid #000000;
+  /* Thinner border (1px instead of 2px) */
+  border-radius: 4px;
+  /* Slightly tighter corner radius */
+
+  font-family: inherit;
+  /* Uses your site's font */
+  font-size: 0.85rem;
+  /* Smaller font size (approx 13-14px) */
+  font-weight: 500;
+  /* Medium weight instead of bold */
+
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hover Effect */
+#btn-logout:hover {
+  background-color: #ff0000;
+  color: #ffffff;
+}
+
+/* Active Click Effect */
+#btn-logout:active {
+  transform: scale(0.98);
+  /* Subtle press animation */
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* New class for the link wrapper */
+.profile-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  /* Removes underline */
+  color: inherit;
+  /* Keeps your text color */
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.profile-link:hover {
+  opacity: 0.8;
+}
+
+/* Ensure the image stays circular */
+.profile-link img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* =========================================
+   MEDIA QUERY: DESKTOP (min-width: 768px)
+   ========================================= */
+@media (min-width: 768px) {
+
+  header {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #E5E5E5;
+  }
+
+  /* Mostrar Desktop Nav y Auth */
+  .nav-desktop {
+    display: flex !important;
+    gap: 2rem;
+  }
+
+  .nav-desktop a {
+    text-decoration: none;
+    color: #666;
+    font-weight: 500;
+  }
+
+  .nav-desktop a:hover,
+  .nav-desktop a.active {
+    color: #000;
+  }
+
+  .desktop-auth {
+    display: flex !important;
+    gap: 0.8rem;
+    align-items: center;
+  }
+
+  /* Estilos botones desktop (más pequeños) */
+  .desktop-auth .btn-primary,
+  .desktop-auth .btn-secondary {
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .desktop-auth .btn-primary {
+    background: #333;
+    color: #fff;
+    border: none;
+  }
+
+  .desktop-auth .btn-secondary {
+    background: #fff;
+    color: #333;
+    border: 1px solid #ccc;
+  }
+
+  /* Ocultar elementos Móviles */
+  .hamburger-btn {
+    display: none !important;
+  }
+
+  .mobile-menu {
+    display: none !important;
+  }
+}
+
+.site-logo {
+  width: 50px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+@media (max-width: 693px) {
+  .site-logo {
+    width: 50px;
+  }
+}
+
+@media (max-width: 393px) {
+  .site-logo {
+    width: 40px;
+  }
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  /* space between flag and hamburger */
+}
+
+/* Ensure buttons are square and centered */
+.header-actions #btn-lang,
+.header-actions .hamburger-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .header-actions {
+    flex-direction: row !important;
+    align-items: stretch;
+  }
+}
